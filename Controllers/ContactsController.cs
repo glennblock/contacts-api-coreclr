@@ -25,22 +25,6 @@ namespace Contacts.Controllers
         public ContactsState Get()
         {  
             return GetContactsState(_context.Contacts);       
-/*
-            var state = new ContactsState();
-            state.Contacts = _context.Contacts.Include(c=>c.Address).Select(c=>new ContactState {
-                Name = c.Name,
-                Href = new Link {Rel="self", Href=GetHref(c.ContactId)},
-                Address = new AddressState {
-                    Address1 = c.Address.Address1,
-                    Address2 = c.Address.Address2,
-                    City = c.Address.City,
-                    State = c.Address.State,
-                    Country = c.Address.Country,
-                    PostalCode = c.Address.PostalCode
-                }
-            });
-            return state;
- */
         }
         
         [HttpGet("{id}")]
